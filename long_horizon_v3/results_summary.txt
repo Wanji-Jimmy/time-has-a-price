@@ -1,0 +1,34 @@
+TIME HAS A PRICE — V3 RESULTS
+24 October 2026
+
+Full 30-step planning on January–September 2026 BTC and ETH history. These data were previously inspected; this is not a new blind test.
+61,344 episodes = 24 parameter settings × 2 assets × 213 overlapping starts × 6 constrained controllers.
+
+Primary setting
+Pack price: 8 cash per 15 budget seconds. Alpha: 0.1. Initial budget: 90.
+
+Asset / controller              Final cash   Remaining budget   Realized utility
+BTCUSDT / 30-step                 100.000          90.000             0.693147
+BTCUSDT / 2-step                  100.000          90.000             0.693147
+BTCUSDT / constrained EMA         100.090           5.000             0.629387
+BTCUSDT / mechanical time EMA      85.344           8.052             0.560802
+ETHUSDT / 30-step                 100.000          90.000             0.693147
+ETHUSDT / 2-step                  100.000          90.000             0.693147
+ETHUSDT / constrained EMA         100.750           5.000             0.631679
+ETHUSDT / mechanical time EMA      82.643           9.366             0.548184
+
+Original EMA without a time limit, cash reference only
+BTCUSDT: 100.592
+ETHUSDT: 101.896
+Time utility is not comparable with the constrained controllers.
+
+Findings
+1. At price 8 and alpha 0.1, the 30-step planner exits immediately in all eight asset/initial-budget conditions. Preserving budget improves utility; this does not mean earning more cash.
+2. Longer planning changes 6 of 192 fixed initial-state actions. At price 8, alpha 0.02, initial budget 45 and cash 100 in a falling, high-volatility state, two steps choose exit while 30 steps choose full investment.
+3. Under those parameters, the BTC realized utility difference, 30-step minus 2-step, is −0.000708. The 95% block-30 interval is [−0.003254, +0.001074], so improvement is not established.
+4. At paid prices 8 and 2, no replay account buys time during trading. At price 0, 51 accounts make 65 purchases.
+5. At price 2, alpha 0.1 and initial budget 20, the planner immediately exits and buys three packs at settlement: final cash 94 and budget 65. This is terminal consumption, not an extension of trading.
+6. At primary price 8, all action choices agree between wealth-grid spacing 1 and 0.5 across 64 fixed states and 1,139 unique historical decision states. This is an observed stability check, not a rigorous error bound.
+7. The independent audit passes for 61,344 accounts, 391,772 ledger events, 288 means, 240 paired differences and 480 block-bootstrap intervals.
+
+Read point estimates with their uncertainty intervals. The 213 starts overlap and are not independent. Prices are observed; budget seconds, prices for time, exhaustion penalties and utility preferences are assumptions. Q values are model estimates.

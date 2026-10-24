@@ -1,0 +1,42 @@
+PROJECT NAME
+Time Has a Price
+
+TAGLINE
+A mathematical decision lab that asks when waiting is worth its cost—and when the best move is to stop.
+
+Inspiration
+Most trading charts count money but treat waiting as free. Inspired by the theme Time, we asked: if every extra decision consumes a scarce time budget, when should you continue, pay for more time, or walk away?
+
+What it does
+Time Has a Price uses real Bitcoin and Ethereum daily prices to compare a full 30-step planner, an original two-step planner, and public 15/30-day moving-average signals under the same budget and trading costs. It explains decisions through the expected value of continuing, buying time, or stopping. Purchases during trading are reported separately from purchases after exit.
+
+How we built it
+We froze a four-state empirical market model estimated from Binance BTC data for 2022–2025, then replayed 61,344 account episodes on January–September 2026 BTC and ETH prices. The 2026 data had already been inspected, so this is historical re-evaluation, not a new blind test. Orders use information available before the next opening price. Constrained controllers share the same fees, budget, horizon and terminal exchange rules.
+
+The planner solves a finite-horizon Bellman problem with seven actions. Merging reachable states avoids an exponentially growing tree; only wealth uses linear grid interpolation. A finer grid checks numerical stability. A separate implementation verifies transactions, balances and aggregate results.
+
+Challenges
+We had to distinguish planning ahead from knowing future prices, cash gains from time purchases, and overlapping historical windows from independent trials. Each decision takes expectations before selecting an action; future decisions can react only after new information arrives.
+
+Results
+Longer planning changes 6 of 192 fixed initial-state decisions, but the historical evidence does not establish a stable improvement. At the main price of 8 cash per 15 budget seconds and time preference 0.1, the planner immediately exits. Neither paid price tested produces purchases during trading. We kept these results rather than tuning for an attractive profit chart.
+
+Our deliberately overengineered twist: under the main assumptions, we built a 30-step optimizer to discover that the best trade is to leave.
+
+What we learned
+A longer horizon can change an action without improving its historical outcome. Higher utility can come from preserving time rather than earning more cash. Prices are observed data; budget seconds, exchange prices and utility preferences are model assumptions, not measured human lifespan.
+
+Next steps
+Test the frozen rules on genuinely unseen data, stress-test the market model, and compare alternative utility functions.
+
+Built with
+Python, NumPy, JavaScript, React, CSS, Binance public data, and the public QuantConnect LEAN moving-average signal. AI-assisted coding, analysis and interface production were used. The project requires no live generative-AI or exchange-trading API.
+
+Sources
+Market data: https://github.com/binance/binance-public-data
+EMA signal, adapted to this market and execution model:
+https://github.com/QuantConnect/Lean/blob/979bd9baef79206b21de257f52601be28d5ab767/Algorithm.Python/MovingAverageCrossAlgorithm.py
+The source signal is credited; its historical profitability is not claimed here.
+
+Project repository
+https://github.com/Wanji-Jimmy/time-has-a-price

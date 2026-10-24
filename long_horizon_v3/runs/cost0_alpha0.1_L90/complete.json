@@ -1,0 +1,15 @@
+{
+  "episodes": 2556,
+  "source_hashes": {
+    "time_budget_policy_v2/kernel.json": "e02e05de8961527dffe92c715ea560c9df526a09c248e9e0dc2f3610f312d09f",
+    "time_budget_policy_v2/planner.py": "16e86f47b0d9f21fdb092269f0d91e31ba275e09fbe0c84327a6cd2ec7d631d1",
+    "time_budget_policy_v2/market.py": "0922c56f6debe5536c2b6528bc31610ab370233c6d97eefafd6fd4ec21d2e53b",
+    "moving_average_life_compare/engine.py": "1b8b99c157e45eb0576f5660aa02180a2cbc5d2ba359d0006419c3f8b20cfec2",
+    "time_budget_policy_v2/data/BTCUSDT-1d-2026.csv": "080670a9c45f227ce7d730fd07d357e9c18b6e294266876083066365631a40b7",
+    "time_budget_policy_v2/data/ETHUSDT-1d-2026.csv": "c21133fff3bd17b6ad9e354462e612c7075fbcfa5a3e1cddb4b3a847c24f559e",
+    "real_market_four_stage/data/BTCUSDT-1d-2022.csv": "ee148b305a9ed6c270b8504efb9b29a92b5f1d90276a671f999fd4a3052f56e3",
+    "real_market_four_stage/data/BTCUSDT-1d-2023.csv": "8c40c0d3abd11e5291b6c6909c823f667acb4483d5408e8fa4e61a237292b985",
+    "real_market_four_stage/data/BTCUSDT-1d-2024.csv": "acebf42f4e533772dc1c644e716a0aef2f0ff43fa14a93bca2791a2bcae65511",
+    "real_market_four_stage/data/BTCUSDT-1d-2025.csv": "91de7898793e0aa38e1a06107b9df030bd3a9296bbcf7abf931deaf1aa00e0dd"
+  }
+}

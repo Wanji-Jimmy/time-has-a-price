@@ -1,0 +1,18 @@
+TIME HAS A PRICE - COVER ASSET
+
+Mode: Built-in image_gen, generated 2026-10-24.
+File: cover-hourglass.png
+Generated cover asset is embedded in the optional presentation.
+Purpose: Symbolic editorial illustration for a presentation cover. This image is not project evidence, a chart, or a model output.
+Visual check: Full hourglass visible on warm ivory; clear glass, continuous sand stream, a few blank brass coins at the bottom, muted green base. No text, logos, UI, or watermark visible. Portrait composition suitable for the right side of a slide.
+
+Prompt:
+Use case: stylized-concept
+Asset type: editorial still-life cover art for the right half of a mathematical research presentation titled Time Has a Price (do not render this title or any text).
+Primary request: Create a beautifully restrained sculptural clear glass hourglass, with fine natural sand flowing down through its narrow neck and gradually becoming a few understated brass coins resting within the sand at the bottom. This is a symbolic illustration, not a data visualization.
+Scene/backdrop: Warm ivory seamless studio backdrop, approximately #F4F1E9, with a matching matte surface; no visible horizon or room details.
+Style/medium: High-end editorial product photograph, visually plausible and elegant glass construction, authentic fine sand, softly brushed brass coins without markings. Minimal museum-like still life, quiet and thoughtful rather than fantasy or money glamour.
+Composition/framing: Portrait 4:5 composition or square, centered hourglass with ample breathing space on all sides, slightly to the right, entire hourglass visible, suitable for cropping into the right half of a 16:9 slide. One main object only, a few subtle coins naturally inside the lower bulb; no extra props.
+Lighting/mood: Soft directional light from upper left, gentle grounded shadow, delicate glass highlights and believable refraction.
+Color palette: Warm ivory, transparent glass, natural pale sand, muted bronze; a very subtle restrained forest-green accent on the hourglass base or reflected edge if natural.
+Constraints: No text, letters, numerals, charts, logos, watermark, currency symbols, UI, hands, people, or ornate decoration. Keep accurate continuous glass contours, one narrow central neck, two balanced bulbs and believable sand flow. Sand falls through the neck; full coins remain only at the bottom.

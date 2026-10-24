@@ -1,0 +1,61 @@
+TIME HAS A PRICE — BROWSER DEMO
+Suggested 2–3-minute walkthrough. Keep the report open throughout.
+Presenter A introduces and concludes. Presenter B explains the model and operates the browser.
+
+BEFORE THE JUDGE ARRIVES
+Open the report and click “Reset baseline”. Close optional panels.
+Check BTC, time-pack price 8, alpha 0.1, and initial budget 90.
+Use browser full screen and a readable zoom. Save code for questions.
+
+0:00–0:25 | THE QUESTION | PRESENTER A
+“Most trading models ask how much money we can make. We ask what waiting costs.
+Time Has a Price is a mathematical decision lab built on real market data.
+With limited time, when should we keep trading, buy more time, or stop?”
+
+0:25–0:55 | THE MODEL | PRESENTER B
+“Each account starts with one hundred cash and a time budget.
+Every market day uses five budget seconds. One time pack adds fifteen seconds.
+The model can exit, hold cash, or invest half or all its wealth. It can also buy a pack before continuing.
+Our score values both final cash and remaining time.”
+
+0:55–1:25 | THE BASELINE | PRESENTER A
+Point to the strategy comparison.
+“We estimated a market model from Bitcoin prices for 2022 to 2025 and froze it.
+We then replayed Bitcoin and Ethereum history from 2026.
+At this baseline, both planners exit with one hundred cash and ninety budget seconds.
+The budget-limited moving-average strategy keeps about one hundred point zero nine cash, but only five seconds.
+More cash alone does not settle the decision.”
+
+1:25–2:10 | A DECISION THAT CHANGES | PRESENTER B
+Scroll to “When does more time change the decision?” Click “Show a changed decision”.
+“Here the starting budget is forty-five seconds.
+The two-step planner exits. The thirty-step planner continues fully invested.
+It values future chances to observe and choose again; it does not know future prices.
+Longer planning changes six of one hundred and ninety-two fixed-state decisions.
+But changing a decision does not guarantee a better outcome. This historical utility difference is slightly negative, and its uncertainty interval includes zero. Improvement is unconfirmed.”
+Point to the action cards and the interval statement. Leave optional panels closed.
+
+2:10–2:40 | WHAT WE LEARNED | PRESENTER A
+“The thirty-step planner made no paid time purchases during trading in these replays.
+Some purchases after exiting are final time consumption, not extra trading time.
+Budget seconds and time prices are our assumptions. The 2026 history had already been inspected, so we still need an unseen test.
+We built a thirty-step optimizer to discover when the best trade is to leave.”
+
+IF ASKED ABOUT THE MATH
+Open “Methods and checks”.
+“Our score combines logarithmic cash utility and time utility. Extra units have diminishing value.
+Bellman planning compares each action’s expected future score, allowing another decision after new information arrives.
+We use an empirical market model and an interpolated wealth grid, not an exact solution for the real market.”
+
+IF ASKED WHEN BUYING TIME IS WORTHWHILE
+Open “Price and preferences”. Set price 2, alpha 0.1, and initial budget 20.
+“The model exits and exchanges six cash for three time packs: ninety-four cash and sixty-five budget seconds.
+This is a terminal exchange. It does not extend trading.”
+
+IF THE LIVE REPORT FAILS
+Open the packaged demo using RUN_DEMO.command or “python3 serve.py --open”.
+If that is unavailable, explain the saved baseline and changed decision verbally. Do not debug during the pitch.
+
+USE THESE TERMS
+Budget seconds; expected utility; historical replay; improvement unconfirmed.
+Avoid: proven profit, real lifespan, blind test, independent trials, or thirty-day price prediction.

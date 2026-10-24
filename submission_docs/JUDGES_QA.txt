@@ -1,0 +1,47 @@
+TIME HAS A PRICE — QUESTIONS AND ANSWERS
+
+What did you build?
+A mathematical decision model that uses observed market data to compare continuing, buying more time budget, and stopping. The interface explains the choices and exposes the evidence.
+
+How does this fit the Time theme?
+Time changes the feasible actions and the objective. Every market day consumes budget, purchases extend the decision horizon, and unused budget has value on exit.
+
+How do you combine money and time?
+U = alpha × ln(1 + L/90) + (1 − alpha) × ln(1 + B/100).
+L is remaining budget, B is cash after costs and purchases, and alpha is time preference. Logarithms give diminishing marginal value. Budget exhaustion has utility zero. These are transparent assumptions, not a universal score for human life.
+
+How does the model choose to buy or exit?
+It computes each action’s expected utility before choosing. Buying must beat exit and every feasible action without a purchase. If no continuation action beats exit, it stops. Future actions can respond to information only after that information is observed.
+
+Does 30-step planning predict the next 30 prices?
+No. Thirty steps is the decision horizon. Future outcomes come from a frozen empirical distribution, not the realized replay path. Signals use past data and orders are chosen before the next opening price is read.
+
+Why can you solve the longer problem? Is it exact?
+We merge reachable states. Remaining budget follows from elapsed days and packs bought; portfolio fractions have a finite set of reachable nodes. Only wealth needs grid interpolation. This solves the full finite-horizon model approximately in wealth, not the real market to global optimality.
+
+What does the result show?
+At the primary assumptions, paying to wait is not worthwhile and the model exits. Longer planning changes some fixed-state decisions, but the historical evidence does not establish stable improvement. Refusing an opportunity is a valid answer to a stopping problem; this is not a demonstrated profitable trading strategy.
+
+Are the 61,344 episodes independent tests?
+No. They combine parameter settings, controllers and highly overlapping windows. Each asset has 213 overlapping starts per condition. We report paired block-bootstrap intervals and a non-overlapping-start sensitivity check. Mean episode cash is not a continuous account’s annual return.
+
+Was 2026 a blind test?
+The market kernel was estimated on 2022–2025 data and frozen, but the 2026 data had already been inspected. This is historical re-evaluation. Genuinely unseen data are needed for the next test.
+
+Is the EMA comparison fair?
+The constrained EMA and mechanical time-buying EMA share the same costs, safety rules and terminal conversion. The original EMA without a time budget is listed separately as a cash reference; its utility is not comparable. The public 15/30 EMA signal is credited.
+
+Why separate purchases during trading from purchases after exit?
+A purchase during trading can make future decisions possible. A purchase after exit changes final budget but creates no further trading opportunity. Paid prices 8 and 2 produce no mid-episode purchases; free purchases do not show that paid time is worthwhile.
+
+Is this about buying real lifespan?
+No lifespan data or medical effects are used. Budget seconds are model units. Prices are observed; cash-to-budget exchange rates are assumptions. The framework can illustrate finite budgets in research, computation, experiments or waiting for opportunities.
+
+How did you check the implementation?
+Synthetic tests cover planning and boundary cases. A separate implementation audits balances, fees, budget conservation, terminal purchases and summary statistics. At the primary price, action choices are stable between wealth-grid spacing 1 and 0.5. These checks do not prove the market distribution remains valid.
+
+What comes from open source or AI?
+Market data come from Binance; the EMA signal references QuantConnect LEAN with attribution. Our contribution combines time budgets, purchasable duration and stopping in an inspectable comparison, with a 30-step solver and analysis interface. AI assisted coding, analysis and interface production.
+
+What would you do next?
+Freeze the rules and evaluate unseen data, then test whether market-state definitions and utility assumptions change the conclusion.

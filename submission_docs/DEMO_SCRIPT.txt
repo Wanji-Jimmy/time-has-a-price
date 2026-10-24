@@ -1,0 +1,32 @@
+TIME HAS A PRICE — DEMO SCRIPT
+
+ONE-MINUTE PITCH
+Most trading models ask how much money you can make. We ask what waiting costs.
+
+Time Has a Price is a mathematical decision lab using real Bitcoin and Ethereum prices. Every market day consumes a modelled time budget. You can hold cash, trade, buy more budget, or stop.
+
+We extended a two-step planner to a full 30-step horizon and compared it with public moving-average signals under the same rules. Longer planning changes some decisions, but the historical evidence does not establish a stable improvement. At the main price, the model refuses to buy time and exits.
+
+An honest model should explain when an opportunity is worth waiting for, and when keeping your time is more valuable. Real prices power the experiment; the time budget is an explicit assumption.
+
+THREE-MINUTE DEMO
+
+0:00–0:35 | The question
+“Trading charts measure money and often treat waiting as free. When time is scarce, should you keep waiting, pay for more time, or stop? These are real Bitcoin and Ethereum prices. Five budget seconds per market day and the cash-for-time exchange are modelling assumptions.”
+
+0:35–1:15 | The main result
+Show BTC, price 8, preference 0.1, initial budget 90.
+“Every constrained method starts with 100 cash and the same budget and fees. Both planners immediately exit with 100 cash and 90 budget seconds. The constrained EMA averages 100.09 cash and five budget seconds. Extra cash alone does not settle the decision.”
+
+1:15–2:00 | A decision that changes
+Click “Show a changed decision”. The example uses price 8, preference 0.02, initial budget 45 and a falling, high-volatility state.
+“The two-step planner stops. The 30-step planner continues fully invested, accounting for future chances to observe and act again. It compares expected action values, not known future prices. Six of 192 fixed initial states change action. The paired historical uncertainty interval for this example includes zero, so we cannot claim a stable improvement.”
+
+2:00–2:35 | Buying time versus terminal consumption
+Open “Price and preferences”; select price 2, preference 0.1 and initial budget 20.
+“Here the model stops, then exchanges six cash for three time packs: 94 cash and 65 budget seconds. That is terminal consumption, not buying extra trading opportunities. At either paid price tested, the planner never buys time during historical trading. Free time produces some purchases, reported separately.”
+
+2:35–3:00 | Evidence and meaning
+“The market model was estimated on 2022–2025 data and frozen. We re-evaluated it on already-inspected 2026 history and independently checked the account ledger. This is an inspectable model of the opportunity cost of waiting. Sometimes its most useful answer is to stop.”
+
+Open “Methods and checks” for the utility formula, action values, uncertainty intervals and audit evidence if asked.

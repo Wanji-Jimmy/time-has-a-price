@@ -1,0 +1,77 @@
+TIME HAS A PRICE — QUICK JUDGE ANSWERS
+Keep the first answer to one sentence; expand only if asked.
+
+What did you build?
+A mathematical decision lab for deciding whether to continue, buy time budget, or stop when waiting has a cost.
+
+Why is this about Time?
+Time changes both the available actions and the objective: each market day consumes budget, and unused budget has value at exit.
+
+Why is this interesting if the model stops?
+Stopping is a valid action; our overengineered optimizer makes the hidden price of waiting explicit instead of forcing a trade.
+
+What is your contribution?
+We combine a purchasable time budget and optimal stopping with a 30-step planner, a controlled EMA comparison, and an inspectable replay and audit.
+
+How does the score work?
+It weights logarithms of final cash and remaining budget, so both have diminishing marginal value; alpha is a chosen time preference.
+If asked: U = alpha × ln(1+L/90) + (1-alpha) × ln(1+B/100), for positive budget. Exhaustion has utility zero.
+
+What is Bellman planning, in plain English?
+Compare each action's average future score, allowing later choices to respond to new information, then choose the highest-valued action now.
+
+Why 30 steps instead of two?
+Future opportunities to observe and act can matter; longer planning changes 6 of 192 fixed-state actions, although stable historical improvement is unproven.
+
+Does the planner see future prices?
+It uses a frozen empirical distribution for possible futures; the realized replay path is not supplied to it when choosing an action.
+
+What is the strongest concrete result?
+At the baseline, both planners preserve 100 cash and 90 budget seconds by exiting; constrained BTC EMA ends with about 100.09 cash and 5 budget seconds.
+
+Is the changed decision better?
+The model prefers it in expected utility, but its paired historical interval includes zero, so this replay does not establish an improvement.
+If asked: BTC, price 8, alpha .02, L=45; realized utility difference -0.000708, block-30 95% interval [-0.003254, +0.001074].
+
+When does it buy time?
+Paid prices 8 and 2 produce no purchases during replay trading; at price 2, alpha .1 and L=20, it exits and exchanges 6 cash for three packs at settlement.
+That terminal exchange leaves 94 cash and 65 budget seconds; it does not extend trading. Free time produces 65 mid-trade purchases across 51 replay accounts.
+
+Are the prices real? Is the time real?
+Prices are observed Binance daily data; budget seconds, their prices, and utility preferences are transparent model assumptions.
+
+What data did you use?
+The market distribution is estimated from BTC in 2022–2025 and frozen; replays use BTC and ETH daily data from January through September 2026.
+
+Was 2026 a blind test?
+Those data had already been inspected, so this is historical re-evaluation; genuinely unseen data are the next test.
+
+Are the 61,344 episodes independent?
+No; they combine settings and controllers over overlapping windows, so we use paired block-bootstrap intervals and a non-overlapping-start sensitivity check.
+
+Is the EMA comparison fair?
+Constrained controllers share costs, budget and terminal exchange rules; the original unrestricted EMA is shown separately as a cash-only reference.
+
+Is the 30-step solution exact?
+It covers the full finite horizon, but wealth uses interpolation; it is an approximate solution to a specified finite model, not an exact optimum for real markets.
+
+How did you verify it?
+Twelve synthetic tests and a separate audit check balances, costs, budgets, terminal exchanges and summaries, covering 391,772 saved ledger events.
+
+What does the app calculate live?
+The interface selects among saved, reproducible experiment results; the Python solver and replay pipeline produced the underlying data.
+
+Did you use open source or AI?
+We credit Binance data and the QuantConnect LEAN EMA reference; AI assisted coding, analysis and interface production.
+
+What is the main limitation?
+Decisions depend on the assumed market distribution and time preference, and the 2026 replay is not unseen evidence.
+
+What would you do next?
+Freeze the current rules, test genuinely unseen data, and check whether different market distributions and utility assumptions change the conclusion.
+
+Can this apply beyond trading?
+The same finite-budget question could describe computation, experiments or waiting for opportunities; those applications would need their own data and assumptions.
+
+If a judge asks for code
+Open long_horizon_v3/long_planner.py for the solver or verify.py for the independent accounting audit; keep the main pitch on the deck and report.
