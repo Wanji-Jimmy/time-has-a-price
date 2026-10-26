@@ -2,7 +2,7 @@
 
 **When is waiting worth its cost?**
 
-A mathematical decision lab that adds a finite time budget to trading decisions.
+A personal side project for experimenting with time budgets and trading decisions.
 Using real Bitcoin and Ethereum prices, it compares a full 30-step planner,
 a two-step planner and public moving-average signals under the same costs.
 
