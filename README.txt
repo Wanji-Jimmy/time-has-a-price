@@ -1,5 +1,5 @@
 TIME HAS A PRICE
-A mathematical decision lab: when is waiting worth its cost?
+A personal side experiment: when is waiting worth its cost?
 
 START THE DEMO (Python 3, no install needed)
   On macOS, double-click RUN_DEMO.command.
@@ -73,11 +73,10 @@ Binance public market data: https://github.com/binance/binance-public-data
 15/30EMA signal reference: QuantConnect LEAN MovingAverageCrossAlgorithm.
 Exact reference URL is in submission_docs/PROJECT_DESCRIPTION.txt.
 We used AI assistance for coding, analysis and interface production. The demo
-itself does not use a live language-model service. Team names remain to fill.
+itself does not use a live language-model service.
 
-SUBMISSION STATUS
-This repository contains the source, public price data, saved results and a
-self-contained demo. A GitHub repository and a Devpost project entry are separate
-steps. Uploading the source does not submit a Devpost entry or assert prize
-eligibility. Team details, current form requirements and judge access still
-need to be checked before formal submission.
+PROJECT STATUS
+This is a personal side experiment. The source, public price data, saved
+results and self-contained demo remain available to explore and reproduce.
+The presentation and submission_docs folders retain earlier draft materials;
+they do not establish an event submission.
